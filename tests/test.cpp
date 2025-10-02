@@ -1,7 +1,6 @@
-// #include "../src/integerDoubler.hpp"
+#include "../src/integerDoubler.hpp"
 
-// int main() {
-//   integerDoubler("./input/in.txt", "./output/out.txt");
-
-//   return 0;
-// }
+int main() {
+  integerDoubler("./tests/input/in.txt", "./tests/output/out.txt");
+  return 0;
+}
