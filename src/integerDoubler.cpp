@@ -14,7 +14,7 @@ void integerDoubler(std::string input_file, std::string output_file) {
 
   while (!in.eof()) {
     int64_t n = 0;
-    in.read(reinterpret_cast<char *>(&n), sizeof(int));
+    in.read(reinterpret_cast<char *>(&n), 32);
     n *= 2;
     out.write(reinterpret_cast<char *>(&n), std::ios::binary);
   }
