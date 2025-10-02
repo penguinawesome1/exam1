@@ -1,4 +1,5 @@
 #include "integerDoubler.hpp"
+#include <cstdint>
 #include <fstream>
 #include <iostream>
 #include <vector>
@@ -12,8 +13,8 @@ void integerDoubler(std::string input_file, std::string output_file) {
   std::ofstream out(output_file);
 
   while (!in.eof()) {
-    long long n = 0;
-    in.read(reinterpret_cast<char *>(&n), 32);
+    int64_t n = 0;
+    in.read(reinterpret_cast<char *>(&n), sizeof(int));
     n *= 2;
     out.write(reinterpret_cast<char *>(&n), std::ios::binary);
   }
