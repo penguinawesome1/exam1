@@ -8,6 +8,7 @@ void integerDoubler(std::string input_file, std::string output_file) {
   std::ifstream in(input_file);
   if (!in) {
     std::cerr << "Invalid input path found for integerDoubler\n";
+    return;
   }
 
   std::ofstream out(output_file);
@@ -15,7 +16,7 @@ void integerDoubler(std::string input_file, std::string output_file) {
   while (!in.eof()) {
     int32_t n = 0;
     in.read(reinterpret_cast<char *>(&n), 32);
-    int64_t n2 = n * 2;
-    out.write(reinterpret_cast<char *>(&n2), std::ios::binary);
+    int64_t n2 = static_cast<int64_t>(n) * 2;
+    out.write(reinterpret_cast<char *>(&n2), 64);
   }
 }
