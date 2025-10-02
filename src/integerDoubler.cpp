@@ -15,9 +15,9 @@ void integerDoubler(std::string input_file, std::string output_file) {
 
   while (!in.eof()) {
     int32_t n = 0;
-    in.read(reinterpret_cast<char *>(&n), 32);
+    in.read(reinterpret_cast<char *>(&n), 4);
     int64_t n2 = static_cast<int64_t>(n) * 2;
     std::cout << "2x: " << n << " " << n2 << "\n";
-    out.write(reinterpret_cast<char *>(&n2), 64);
+    out.write(reinterpret_cast<char *>(&n2), 8);
   }
 }
