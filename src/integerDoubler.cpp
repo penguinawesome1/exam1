@@ -12,6 +12,8 @@ void integerDoubler(std::string input_file, std::string output_file) {
 
   std::ofstream out(output_file);
 
+  in.seekg(1);
+
   while (!in.eof()) {
     int n = 0;
     in.read(reinterpret_cast<char *>(&n), sizeof(int));
